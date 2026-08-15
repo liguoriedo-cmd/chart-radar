@@ -307,6 +307,35 @@ td.d{text-align:right}
     var s=el.querySelector('.linea'); if(s) s.textContent=titolo;
   }
   agg(); setInterval(agg,30000);
+
+  // --- ricaricare, ma senza disturbare ---
+  //
+  // L'orario inciso nella pagina non cambia da solo: una scheda lasciata
+  // aperta diventa gialla dopo la soglia e rossa dopo il quadruplo, anche col
+  // radar perfettamente sano. Stava misurando l'eta' della pagina in mano,
+  // non la salute del programma.
+  //
+  // Ricaricare a intervallo fisso pero' sarebbe peggio: ti toglierebbe il
+  // grafico da sotto il cursore mentre lo stai ingrandendo. Quindi si ricarica
+  // solo quando sei ALTROVE -- quando torni sulla scheda dopo esserne uscito,
+  // oppure quando non tocchi niente da un po'.
+  var ultimoTocco = Date.now();
+  ['pointerdown','wheel','keydown'].forEach(function(n){
+    document.addEventListener(n, function(){ ultimoTocco = Date.now(); },
+                              {passive:true});
+  });
+  function vecchia(){
+    var nato=new Date(el.dataset.quando).getTime();
+    return (Date.now()-nato)/60000 >= parseFloat(el.dataset.soglia||'15')*0.6;
+  }
+  function fermo(){ return Date.now()-ultimoTocco > 120000; }
+
+  document.addEventListener('visibilitychange', function(){
+    if(!document.hidden && vecchia()) location.reload();
+  });
+  setInterval(function(){
+    if(!document.hidden && vecchia() && fermo()) location.reload();
+  }, 60000);
 })();
 
 // --- ordinamento a mano ---

@@ -120,6 +120,49 @@ th{
 th.no{cursor:default}
 th .fre{opacity:.35; font-size:9px; margin-left:3px}
 th[aria-sort] .fre{opacity:1; color:var(--accento)}
+
+/* --- il setaccio: ricerca e famiglie --- */
+.setaccio{display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+          margin:14px 0 10px}
+.setaccio input[type=search]{flex:0 1 200px; min-width:130px; padding:7px 10px;
+  border:1px solid var(--bordo); border-radius:8px; background:var(--carta);
+  color:var(--testo); font:inherit; font-size:13px}
+.setaccio input[type=search]:focus{outline:2px solid var(--accento);
+  outline-offset:1px}
+.famiglie{display:flex; flex-wrap:wrap; gap:6px}
+.fam{padding:6px 11px; border:1px solid var(--bordo); border-radius:999px;
+  background:transparent; color:var(--tenue); font:inherit; font-size:12px;
+  cursor:pointer; white-space:nowrap}
+.fam:hover{border-color:var(--accento); color:var(--testo)}
+.fam i{font-style:normal; opacity:.6; font-variant-numeric:tabular-nums;
+       margin-left:3px}
+.fam.scelta{background:var(--accento); border-color:var(--accento);
+            color:var(--su-accento)}
+.fam.scelta i{opacity:.8}
+.conta{margin-left:auto; font-size:12px; color:var(--tenue);
+       font-variant-numeric:tabular-nums}
+tr[hidden]{display:none}
+.nessuno{padding:18px; text-align:center; color:var(--tenue); font-size:13px}
+
+/* --- la sintesi in cima alla scheda --- */
+.sintesi{border:1px solid var(--bordo); border-radius:12px; padding:14px 16px;
+         margin:14px 0; background:var(--carta)}
+.sintesi .capo{font-size:14px; line-height:1.55; margin:0 0 4px}
+.sintesi .avvertenza{font-size:11.5px; color:var(--tenue); margin:8px 0 0;
+                     line-height:1.5}
+.conf{display:flex; flex-direction:column; gap:0; margin:10px 0 0; padding:0;
+      list-style:none}
+.conf li{display:flex; flex-wrap:wrap; align-items:baseline; gap:9px;
+         font-size:12.5px; padding:7px 0; border-top:1px solid var(--bordo)}
+.conf .fascia{font-variant-numeric:tabular-nums; font-weight:620;
+              min-width:118px}
+.conf .dist{font-variant-numeric:tabular-nums; color:var(--tenue);
+            min-width:112px}
+.conf .pezzi{color:var(--tenue); flex:1 1 200px}
+.conf .peso{font-size:11px; padding:1px 7px; border-radius:999px;
+            border:1px solid var(--bordo); color:var(--tenue)}
+.conf .peso.multi{border-color:var(--accento); color:var(--accento)}
+
 tbody tr:hover{background:var(--carta2)}
 td.d{text-align:right}
 .tk{font-weight:620; letter-spacing:-.01em}
@@ -299,7 +342,7 @@ tr.chiuso:hover td{opacity:.85}
 .legenda .tenue{opacity:.75}
 .pie{margin-top:26px; font-size:12px; color:var(--tenue); line-height:1.7}
 .pie code{font-size:11px}
-</style></head><body><main><div class="testa"><h1>Struttura dei grafici</h1><span class="ver">V1.2</span></div><p class="sotto">Azioni USA · sessione regolare · 5m · 15m · 45m · 1h · 1d</p><div class="stato" id="stato" data-quando="2026-08-16T13:53:13.436062-04:00" data-soglia="60"><span class="spia"></span><span class="linea">stato in verifica</span><span class="sep">·</span><span class="eta">—</span><span class="sep">·</span><span class="num">13:53</span><span class="bilancio tranquillo">6 titoli · 554/800 richieste oggi</span></div><div class="riquadro"><div class="scorri"><table class="elenco"><thead><tr><th class="no">Titolo</th><th data-col="1">Prezzo<span class="fre">▲▼</span></th><th data-col="2">Giorno<span class="fre">▲▼</span></th><th class="no">Struttura per timeframe</th><th data-col="4">Accordo<span class="fre">▲▼</span></th><th data-col="5">Ultimo fatto<span class="fre">▲▼</span></th><th data-col="6">Zone<span class="fre">▲▼</span></th><th class="no">Livello vicino</th></tr></thead><tbody><tr class="chiuso"><td class="tk" data-v="AAPL"><a href="AAPL.html">AAPL</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="305.9300">305.93</td><td class="d num su" data-v="0.2195">+0.22%</td><td data-v=""><div class="scala"><span class="tf laterale" title="5m: laterale">5m</span><span class="tf laterale" title="15m: laterale">15m</span><span class="tf laterale" title="45m: laterale">45m</span><span class="tf laterale" title="1h: laterale">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T15:25:00-04:00"><span class="pill choch">CHoCH</span> <span class="num">5m</span> <span class="neutro">14/08 15:25</span></td><td class="d num" data-v="289">289</td><td data-v="">—</td></tr><tr class="chiuso"><td class="tk" data-v="SPY"><a href="SPY.html">SPY</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="776.3400">776.34</td><td class="d num giu" data-v="-0.1980">-0.20%</td><td data-v=""><div class="scala"><span class="tf laterale" title="5m: laterale">5m</span><span class="tf laterale" title="15m: laterale">15m</span><span class="tf laterale" title="45m: laterale">45m</span><span class="tf rialzista" title="1h: rialzista">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T15:20:00-04:00"><span class="pill sweep">sweep</span> <span class="num">5m</span> <span class="neutro">14/08 15:20</span></td><td class="d num" data-v="248">248</td><td data-v="0.1894"><span class="num">S1</span> <span class="num neutro">774.87</span> <span class="num giu">-0.2%</span></td></tr><tr class="chiuso"><td class="tk" data-v="QQQ"><a href="QQQ.html">QQQ</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="731.0700">731.07</td><td class="d num giu" data-v="-0.1366">-0.14%</td><td data-v=""><div class="scala"><span class="tf rialzista" title="5m: rialzista">5m</span><span class="tf laterale" title="15m: laterale">15m</span><span class="tf laterale" title="45m: laterale">45m</span><span class="tf rialzista" title="1h: rialzista">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T15:40:00-04:00"><span class="pill bos">BoS</span> <span class="num">5m</span> <span class="neutro">14/08 15:40</span></td><td class="d num" data-v="282">282</td><td data-v="">—</td></tr><tr class="chiuso"><td class="tk" data-v="GLD"><a href="GLD.html">GLD</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="401.4800">401.48</td><td class="d num su" data-v="0.6316">+0.63%</td><td data-v=""><div class="scala"><span class="tf ribassista" title="5m: ribassista">5m</span><span class="tf ribassista" title="15m: ribassista">15m</span><span class="tf laterale" title="45m: laterale">45m</span><span class="tf laterale" title="1h: laterale">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T15:50:00-04:00"><span class="pill sweep">sweep</span> <span class="num">5m</span> <span class="neutro">14/08 15:50</span></td><td class="d num" data-v="394">394</td><td data-v="0.2042"><span class="num">PWH</span> <span class="num neutro">400.66</span> <span class="num giu">-0.2%</span></td></tr><tr class="chiuso"><td class="tk" data-v="EUR/USD"><a href="EUR_USD.html">EUR/USD</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="1.1570">1.16</td><td class="d num su" data-v="0.3591">+0.36%</td><td data-v=""><div class="scala"><span class="tf laterale" title="5m: laterale">5m</span><span class="tf laterale" title="15m: laterale">15m</span><span class="tf rialzista" title="45m: rialzista">45m</span><span class="tf rialzista" title="1h: rialzista">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T16:55:00-04:00"><span class="pill bos">BoS</span> <span class="num">5m</span> <span class="neutro">14/08 16:55</span></td><td class="d num" data-v="118">118</td><td data-v="">—</td></tr><tr class="chiuso"><td class="tk" data-v="XAU/USD"><a href="XAU_USD.html">XAU/USD</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="4376.5619">4376.56</td><td class="d num su" data-v="0.5834">+0.58%</td><td data-v=""><div class="scala"><span class="tf ribassista" title="5m: ribassista">5m</span><span class="tf ribassista" title="15m: ribassista">15m</span><span class="tf laterale" title="45m: laterale">45m</span><span class="tf laterale" title="1h: laterale">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T16:10:00-04:00"><span class="pill choch">CHoCH</span> <span class="num">5m</span> <span class="neutro">14/08 16:10</span></td><td class="d num" data-v="269">269</td><td data-v="">—</td></tr></tbody></table></div></div><div class="pie">Stai guardando la copia pubblica: mostra gli stessi dati ma non accetta modifiche alla lista. Per cambiarla apri la pagina sul NAS.<br>Le strutture sono riconosciute da regole geometriche fisse: <code>FVG</code> squilibrio a tre candele, <code>BoS</code> chiusura oltre un massimo di swing nella direzione della tendenza, <code>CHoCH</code> la stessa rottura ma contro, <code>sweep</code> stoppino oltre un livello con chiusura rientrata, <code>OB</code> ultima candela opposta prima dell'impulso che ha rotto. Un pivot esiste solo due candele dopo essersi formato, e nessun evento usa livelli non ancora confermati.<br>Questo pannello descrive quello che e' successo. Non prevede, non consiglia e non esegue operazioni.</div></main><script>
+</style></head><body><main><div class="testa"><h1>Struttura dei grafici</h1><span class="ver">V2</span></div><p class="sotto">Azioni USA · sessione regolare · 5m · 15m · 45m · 1h · 1d</p><div class="stato" id="stato" data-quando="2026-08-16T16:18:36.025557-04:00" data-soglia="60"><span class="spia"></span><span class="linea">stato in verifica</span><span class="sep">·</span><span class="eta">—</span><span class="sep">·</span><span class="num">16:18</span><span class="bilancio tranquillo">6 titoli · 554/800 richieste oggi</span></div><div class="setaccio"><input id="cerca" type="search" placeholder="cerca…" autocomplete="off" spellcheck="false" aria-label="filtra l'elenco"><div class="famiglie"><button class="fam scelta" data-fam="">tutti <i>6</i></button><button class="fam" data-fam="azioni">azioni <i>1</i></button><button class="fam" data-fam="indici">indici <i>2</i></button><button class="fam" data-fam="materie prime">materie prime <i>2</i></button><button class="fam" data-fam="forex">forex <i>1</i></button></div><span class="conta" id="conta"></span></div><div class="riquadro"><div class="scorri"><table class="elenco"><thead><tr><th class="no">Titolo</th><th data-col="1">Prezzo<span class="fre">▲▼</span></th><th data-col="2">Giorno<span class="fre">▲▼</span></th><th class="no">Struttura per timeframe</th><th data-col="4">Accordo<span class="fre">▲▼</span></th><th data-col="5">Ultimo fatto<span class="fre">▲▼</span></th><th data-col="6">Zone<span class="fre">▲▼</span></th><th class="no">Livello vicino</th></tr></thead><tbody><tr class="chiuso" data-fam="azioni" data-cerca="aapl azioni"><td class="tk" data-v="AAPL"><a href="AAPL.html">AAPL</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="305.9300">305.93</td><td class="d num su" data-v="0.2195">+0.22%</td><td data-v=""><div class="scala"><span class="tf laterale" title="5m: laterale">5m</span><span class="tf laterale" title="15m: laterale">15m</span><span class="tf laterale" title="45m: laterale">45m</span><span class="tf laterale" title="1h: laterale">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T15:25:00-04:00"><span class="pill choch">CHoCH</span> <span class="num">5m</span> <span class="neutro">14/08 15:25</span></td><td class="d num" data-v="289">289</td><td data-v="">—</td></tr><tr class="chiuso" data-fam="indici" data-cerca="spy indici"><td class="tk" data-v="SPY"><a href="SPY.html">SPY</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="776.3400">776.34</td><td class="d num giu" data-v="-0.1980">-0.20%</td><td data-v=""><div class="scala"><span class="tf laterale" title="5m: laterale">5m</span><span class="tf laterale" title="15m: laterale">15m</span><span class="tf laterale" title="45m: laterale">45m</span><span class="tf rialzista" title="1h: rialzista">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T15:20:00-04:00"><span class="pill sweep">sweep</span> <span class="num">5m</span> <span class="neutro">14/08 15:20</span></td><td class="d num" data-v="248">248</td><td data-v="0.1894"><span class="num">S1</span> <span class="num neutro">774.87</span> <span class="num giu">-0.2%</span></td></tr><tr class="chiuso" data-fam="indici" data-cerca="qqq indici"><td class="tk" data-v="QQQ"><a href="QQQ.html">QQQ</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="731.0700">731.07</td><td class="d num giu" data-v="-0.1366">-0.14%</td><td data-v=""><div class="scala"><span class="tf rialzista" title="5m: rialzista">5m</span><span class="tf laterale" title="15m: laterale">15m</span><span class="tf laterale" title="45m: laterale">45m</span><span class="tf rialzista" title="1h: rialzista">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T15:40:00-04:00"><span class="pill bos">BoS</span> <span class="num">5m</span> <span class="neutro">14/08 15:40</span></td><td class="d num" data-v="282">282</td><td data-v="">—</td></tr><tr class="chiuso" data-fam="materie prime" data-cerca="gld materie prime"><td class="tk" data-v="GLD"><a href="GLD.html">GLD</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="401.4800">401.48</td><td class="d num su" data-v="0.6316">+0.63%</td><td data-v=""><div class="scala"><span class="tf ribassista" title="5m: ribassista">5m</span><span class="tf ribassista" title="15m: ribassista">15m</span><span class="tf laterale" title="45m: laterale">45m</span><span class="tf laterale" title="1h: laterale">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T15:50:00-04:00"><span class="pill sweep">sweep</span> <span class="num">5m</span> <span class="neutro">14/08 15:50</span></td><td class="d num" data-v="394">394</td><td data-v="0.2042"><span class="num">PWH</span> <span class="num neutro">400.66</span> <span class="num giu">-0.2%</span></td></tr><tr class="chiuso" data-fam="forex" data-cerca="eur/usd forex"><td class="tk" data-v="EUR/USD"><a href="EUR_USD.html">EUR/USD</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="1.1570">1.16</td><td class="d num su" data-v="0.3591">+0.36%</td><td data-v=""><div class="scala"><span class="tf laterale" title="5m: laterale">5m</span><span class="tf laterale" title="15m: laterale">15m</span><span class="tf rialzista" title="45m: rialzista">45m</span><span class="tf rialzista" title="1h: rialzista">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T16:55:00-04:00"><span class="pill bos">BoS</span> <span class="num">5m</span> <span class="neutro">14/08 16:55</span></td><td class="d num" data-v="118">118</td><td data-v="">—</td></tr><tr class="chiuso" data-fam="materie prime" data-cerca="xau/usd materie prime"><td class="tk" data-v="XAU/USD"><a href="XAU_USD.html">XAU/USD</a><span class="dorme" title="mercato chiuso: questo prezzo non si muove fino alla riapertura">chiuso</span></td><td class="d num" data-v="4376.5619">4376.56</td><td class="d num su" data-v="0.5834">+0.58%</td><td data-v=""><div class="scala"><span class="tf ribassista" title="5m: ribassista">5m</span><span class="tf ribassista" title="15m: ribassista">15m</span><span class="tf laterale" title="45m: laterale">45m</span><span class="tf laterale" title="1h: laterale">1h</span><span class="tf laterale" title="1d: laterale">1d</span></div></td><td data-v="2" class="discorde">discorde</td><td data-v="2026-08-14T16:10:00-04:00"><span class="pill choch">CHoCH</span> <span class="num">5m</span> <span class="neutro">14/08 16:10</span></td><td class="d num" data-v="269">269</td><td data-v="">—</td></tr></tbody></table></div></div><div class="pie">Stai guardando la copia pubblica: mostra gli stessi dati ma non accetta modifiche alla lista. Per cambiarla apri la pagina sul NAS.<br>Le strutture sono riconosciute da regole geometriche fisse: <code>FVG</code> squilibrio a tre candele, <code>BoS</code> chiusura oltre un massimo di swing nella direzione della tendenza, <code>CHoCH</code> la stessa rottura ma contro, <code>sweep</code> stoppino oltre un livello con chiusura rientrata, <code>OB</code> ultima candela opposta prima dell'impulso che ha rotto. Un pivot esiste solo due candele dopo essersi formato, e nessun evento usa livelli non ancora confermati.<br>Questo pannello descrive quello che e' successo. Non prevede, non consiglia e non esegue operazioni.</div></main><script>
 // --- freschezza: la pagina non sa di essere vecchia, il browser si ---
 (function(){
   var el=document.getElementById('stato'); if(!el) return;
@@ -349,6 +392,63 @@ tr.chiuso:hover td{opacity:.85}
   setInterval(function(){
     if(!document.hidden && vecchia() && fermo()) location.reload();
   }, 60000);
+})();
+
+// --- restringere l'elenco: ricerca e famiglie ---
+// Lavora nascondendo righe, non ricostruendo la tabella: l'ordinamento
+// scelto resta quello, e tornando a "tutti" si ritrova esattamente la
+// disposizione di prima. La famiglia scelta si ricorda fra una visita e
+// l'altra; il testo cercato no, perche' ritrovare una lista misteriosamente
+// vuota dopo due giorni sarebbe un guasto, non una comodita'.
+(function(){
+  var t=document.querySelector('table.elenco'); if(!t) return;
+  var cerca=document.getElementById('cerca');
+  var conta=document.getElementById('conta');
+  var bottoni=[].slice.call(document.querySelectorAll('.fam'));
+  if(!cerca && !bottoni.length) return;
+  var famiglia='';
+  try{ famiglia=localStorage.getItem('famiglia')||''; }catch(e){}
+
+  function passa(r, testo){
+    if(famiglia && r.dataset.fam!==famiglia) return false;
+    if(!testo) return true;
+    return (r.dataset.cerca||'').indexOf(testo)>=0;
+  }
+  function applica(){
+    var testo=(cerca && cerca.value || '').trim().toLowerCase();
+    var corpo=t.tBodies[0], righe=[].slice.call(corpo.rows), visibili=0;
+    righe.forEach(function(r){
+      if(r.classList.contains('nulla')) return;
+      var ok=passa(r, testo);
+      r.hidden=!ok; if(ok) visibili++;
+    });
+    var nulla=corpo.querySelector('tr.nulla');
+    if(visibili===0){
+      if(!nulla){
+        nulla=corpo.insertRow();
+        nulla.className='nulla';
+        var c=nulla.insertCell();
+        c.colSpan=t.tHead.rows[0].cells.length;
+        c.className='nessuno';
+        c.textContent='nessuno strumento corrisponde';
+      }
+      nulla.hidden=false;
+    } else if(nulla){ nulla.hidden=true; }
+    if(conta) conta.textContent=visibili+' su '+
+      righe.filter(function(r){return !r.classList.contains('nulla');}).length;
+    bottoni.forEach(function(b){
+      b.classList.toggle('scelta', (b.dataset.fam||'')===famiglia);
+    });
+  }
+  bottoni.forEach(function(b){
+    b.addEventListener('click', function(){
+      famiglia=b.dataset.fam||'';
+      try{ localStorage.setItem('famiglia', famiglia); }catch(e){}
+      applica();
+    });
+  });
+  if(cerca) cerca.addEventListener('input', applica);
+  applica();
 })();
 
 // --- ordinamento a mano ---
